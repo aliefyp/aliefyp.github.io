@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:500');
+
+body {
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+	color: #0E2430;
+	background-color: #f9f9f9;
+}
+
+.section {
+	height: 100%;
+	max-width: 479px;
+	overflow: hidden;
+	margin: auto;
+	text-align: center;
+	background: url("https://images.unsplash.com/photo-1501612780327-45045538702b?dpr=1&auto=compress,format&fit=crop&w=1500&h=&q=80&cs=tinysrgb&crop=") no-repeat center;
+}
+
+.section-overlay {
+	content: "";
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.section__title {
+	font-family: 'Playfair Display', serif;
+	font-size: 1.5rem;
+	text-align: center;
+    padding: 4rem 0 1rem;
+	font-weight: 500;
+    margin-bottom: 30px;
+    color: rgba(0,0,0,0.7);
+}
+
+.main-btn {
+	border-radius: 27px;
+	background-color: #4ECDC4;
+	color: white;
+	font-weight: 500;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0px 7px 10px rgba(0,0,0,0.12);
+    top: 80%;
+    position: relative;
+    display: inline-block;
+	z-index: 2;
+}
+
+.main-btn:focus {
+	width: 54px;
+	animation: btnBounce 0.4s ease-in-out;
+	outline: none;
+}
+
+.main-btn:before {
+	content: "SUBMIT PLAYLIST";
+	line-height: 54px;
+	letter-spacing: 2px;
+	font-size: 0.8rem;
+    display: inline-block;
+    transition: content 0.4s ease-in-out;
+    transition-delay: 0.4s;
+}
+
+.main-btn:focus:before {
+	content: url("./play.svg");
+	padding: 19px 0;
+	display: inline-block;
+	transform: translateX(2px);
+}
+
+.f-forward {
+    top: 80%;
+	position: absolute;
+    left: 50%;
+    transform: translateX(-27px);
+    z-index: 1;
+	/*transition: transform 0.2s ease-in-out;*/
+}
+
+.f-forward {
+	/*content: url("./ff.svg");*/
+	padding: 19px;
+	display: inline-block;
+}
+
+.main-btn:focus ~ .f-forward {
+	transform: translateX(27px);
+	transition: all 0.7 ease-in-out;
+	-webkit-animation: btnFwd 0.7s;
+	-o-animation: btnFwd 0.7s;
+	animation: btnFwd 0.7s;
+	-webkit-filter: drop-shadow( 0px 7px 10px rgba(0,0,0,0.12) ); 
+            filter: drop-shadow( 0px 7px 10px rgba(0,0,0,0.12) );
+}
+
+.f-backward {
+    top: 80%;
+	position: absolute;
+    right: 50%;
+    transform: rotate(180deg) translateX(-27px);
+    z-index: 1;
+	/*transition: transform 0.2s ease-in-out;*/
+}
+
+.f-backward {
+	/*content: url("./ff.svg");*/
+	padding: 19px;
+	display: inline-block;
+}
+
+.main-btn:focus ~ .f-backward {
+	transform: rotate(180deg) translateX(27px);
+	transition: all 0.7 ease-in-out;
+	-webkit-animation: btnRwd 0.7s;
+	-o-animation: btnRwd 0.7s;
+	animation: btnRwd 0.7s;
+	-webkit-filter: drop-shadow( 0px 7px 10px rgba(0,0,0,0.12) ); 
+            filter: drop-shadow( 0px 7px 10px rgba(0,0,0,0.12) );
+}
+
+.mark {
+	font-family: 'Playfair Display', serif;
+	font-size: 0.75rem;
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	width: 100%;
+	color: rgba(0,0,0,0.4);
+	font-weight: 600;
+}
+
+
+@media only screen and (max-width: 479px){
+	.section {
+		max-width: 100%;
+	}
+}
+
+@keyframes btnBounce {
+	0% { width: 200px; }
+	30% { width: 30px; }
+	60% { width: 70px; }
+	100% { width: 50px; }
+}
+
+@keyframes btnFwd {
+	0% {transform: translateX(-27px);}
+	80% {transform: translateX(30px);}
+	100% {transform: translateX(25px);}
+}
+
+@keyframes btnRwd {
+	0% {transform: rotate(180deg) translateX(-27px);}
+	80% {transform: rotate(180deg) translateX(30px);}
+	100% {transform: rotate(180deg) translateX(25px);}
+}
