@@ -1,0 +1,23 @@
+{
+  "name": "sintalief",
+  "version": "1.0.0",
+  "description": "Sinta & Alief online wedding invitation",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server & sass --watch assets/css:assets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aliefyp/sintaalief.git"
+  },
+  "author": "Alief Yoga Priyanto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aliefyp/sintaalief/issues"
+  },
+  "homepage": "https://github.com/aliefyp/sintaalief#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}

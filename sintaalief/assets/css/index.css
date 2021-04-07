@@ -1,12 +1,4 @@
 @font-face {
-  font-family: poppy;
-  src: url("../fonts/poppy_shower.ttf");
-}
-@font-face {
-  font-family: memories;
-  src: url("../fonts/memories.ttf");
-}
-@font-face {
   font-family: belista;
   src: url("../fonts/belista.ttf");
 }
@@ -44,11 +36,17 @@ html {
   line-height: 1.63;
 }
 
-.banner {
-  height: 95vh;
+body {
   width: 100vw;
-  background-image: url("../images/rustic.jpeg");
-  background-size: cover;
+  overflow-x: hidden;
+  background-image: url("../images/paper-fibers.png");
+}
+
+.banner {
+  height: 90vh;
+  width: 100vw;
+  background-image: url("../images/sample1.png");
+  background-size: 200%;
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
@@ -58,37 +56,88 @@ html {
   text-align: center;
   position: relative;
 }
+.banner__subtitle {
+  margin-bottom: 32px;
+  color: #9FA9A0;
+  z-index: 1;
+}
+@media screen and (min-width: 500px) {
+  .banner__subtitle {
+    font-size: 1.2rem;
+  }
+}
 .banner__title {
   font-family: belista;
   font-size: 5rem;
   line-height: 0.7;
   transform: skew(-7deg, -7deg);
   color: #BCAD90;
+  z-index: 1;
 }
 .banner__title span {
-  font-size: 3rem;
+  font-family: playfair;
+  transform: skew(0, 0) translateY(-40px);
+  font-size: 2.8rem;
+  color: #fff;
+  z-index: 2;
 }
 .banner__date {
   margin-top: 32px;
-  color: #91966E;
+  color: #9FA9A0;
+  z-index: 1;
 }
-.banner__arrow {
-  height: 64px;
-  width: 64px;
-  border-radius: 32px;
-  line-height: 32px;
-  position: absolute;
-  bottom: -32px;
-  margin: auto;
+@media screen and (min-width: 500px) {
+  .banner__date {
+    font-size: 1.2rem;
+  }
+}
+
+.container {
+  margin: 16px;
+  transform: translateY(-40px);
   background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.4rem;
-  cursor: pointer;
+  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
 }
-.banner__arrow span {
-  animation: bounce 1.5s linear infinite;
+@media screen and (min-width: 500px) {
+  .container {
+    margin: 40px;
+  }
+}
+.container::after {
+  content: "";
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: -49px;
+  background-image: url(../images/wave-white.svg);
+}
+
+.story {
+  padding: 48px 32px;
+  background-color: #BCAD90;
+  position: relative;
+}
+.story__content {
+  text-align: center;
+  margin: 0 auto;
+  padding: 32px;
+  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 16px;
+  max-width: 800px;
+  background-color: #fff;
+  position: relative;
+}
+.story__content img {
+  width: 120px;
+  margin-bottom: 16px;
+}
+.story__content h3 {
+  color: #BCAD90;
+  margin-bottom: 16px;
+}
+.story__content p {
+  margin-bottom: 16px;
 }
 
 .quote {
@@ -96,10 +145,14 @@ html {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 72px 48px;
+  padding: 32px 48px 48px;
   max-width: 600px;
   text-align: center;
   margin: auto;
+}
+.quote img {
+  width: 100px;
+  margin-bottom: 32px;
 }
 .quote__icon {
   color: #91966E;
@@ -111,8 +164,16 @@ html {
   color: #BCAD90;
 }
 
+.gallery {
+  display: flex;
+}
+.gallery img {
+  width: 25%;
+  margin: 0;
+}
+
 .bio {
-  padding: 32px 0 64px;
+  padding: 64px 0;
   margin: auto;
 }
 @media screen and (min-width: 500px) {
@@ -156,7 +217,17 @@ html {
   }
 }
 .bio img {
-  width: 100px;
+  width: 160px;
+}
+.bio__photo {
+  position: relative;
+}
+.bio__photo::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, white, transparent);
 }
 .bio__nick {
   font-family: belista;
@@ -196,6 +267,15 @@ html {
   top: -49px;
   background-image: url(../images/wave-green.svg);
 }
+.set::after {
+  content: "";
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: -49px;
+  background-image: url(../images/wave-green.svg);
+  transform: rotate(180deg);
+}
 @media screen and (min-width: 500px) {
   .set {
     flex-direction: row;
@@ -208,6 +288,18 @@ html {
 }
 .set__item h3 {
   margin-bottom: 16px;
+}
+
+.wishes {
+  padding: 16px;
+  margin: auto;
+  max-width: 500px;
+}
+.wishes__title {
+  font-family: belista;
+  color: #BCAD90;
+  font-size: 4rem;
+  text-align: center;
 }
 
 /*# sourceMappingURL=index.css.map */
